@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+    
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorSurface">@color/dark_blue</item>
+        <item name="colorOnSurfaceVariant">@color/ligh_blue</item>
+        <item name="colorSecondaryContainer">@color/ligh_blue</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSecondaryContainer">@color/dark_blue</item>
+        <item name="fontFamily">@font/belgrano</item>
+        <item name="elevation">3dp</item>
+        <item name="itemRippleColor">@color/white</item>
+    </style>
+
+    <style name= "ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons" parent = "MaterialAlertDialog.Material3">
+        <item name = "cornerFamily">rounded</item>
+        <item name = "cornerRadius">12dp</item>
+        <item name = "android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="basicTitle16sp" parent = "Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/belgrano</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BuildersLog/app/src/main/res/drawable/ic_back_icon_svg.xml" value="0.19572649572649573" />
+        <entry key="..\:/BuildersLog/app/src/main/res/drawable/report_bg.xml" value="0.19572649572649573" />
         <entry key="..\:/BuildersLog/app/src/main/res/drawable/white_bg_12dp.xml" value="0.19572649572649573" />
         <entry key="..\:/BuildersLog/app/src/main/res/drawable/white_bg_20dp.xml" value="0.19572649572649573" />
+        <entry key="..\:/BuildersLog/app/src/main/res/layout/activity_add_log.xml" value="0.25" />
         <entry key="..\:/BuildersLog/app/src/main/res/layout/activity_login.xml" value="0.17905982905982906" />
         <entry key="..\:/BuildersLog/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/BuildersLog/app/src/main/res/layout/activity_signup.xml" value="0.2" />
         <entry key="..\:/BuildersLog/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/BuildersLog/app/src/main/res/layout/activity_weekly_report.xml" value="0.17905982905982906" />
+        <entry key="..\:/BuildersLog/app/src/main/res/layout/fragment_blank.xml" value="0.17905982905982906" />
+        <entry key="..\:/BuildersLog/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/BuildersLog/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.17905982905982906" />
+        <entry key="..\:/BuildersLog/app/src/main/res/menu/menu.xml" value="0.17905982905982906" />
       </map>
     </option>
   </component>

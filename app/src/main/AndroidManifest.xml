@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuildersLog">
         <activity
+            android:name=".WeeklyReport"
+            android:exported="false" />
+        <activity
+            android:name=".AddLog"
+            android:theme="@style/addLogTheme"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity
