@@ -20,3 +20,5 @@
 |12-3-22| 05 | -|
 |13-3-22| 06 | Ui Completed, MainActivity, log activity |
 |14-3-22| 07 |  |
+|18-3-22| 11 | Changes to logactivity |
+|19-3-22| 12 |  |
