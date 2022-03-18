@@ -71,5 +71,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightLayout" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/muscleGroupRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/musclegroupText" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/doneFloatingButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/dark_blue"
+        android:text="@string/done"
+        android:textColor="@color/ligh_blue"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

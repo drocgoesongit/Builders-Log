@@ -26,4 +26,11 @@
         <item name="android:textColor">@color/dark_blue</item>
         <item name="android:textSize">16sp</item>
     </style>
+    <style name="smallText12sp" parent = "Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/belgrano</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
 </resources>
