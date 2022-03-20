@@ -37,8 +37,6 @@ public class Home extends Fragment {
     private FragmentHomeBinding binding;
     private String presentDate;
     private static final String TAG = "Home";
-    private LogElement presentDayLog;
-    private ArrayList<LogElement> listOfLogs;
 
     public Home() {
         // Required empty public constructor
@@ -49,10 +47,9 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(getLayoutInflater(), container, false);
 
-        listOfLogs = new ArrayList<>();
-
         getLogData();
 
+        //TODO to put some loading animation in place of today's activity.
 
         //getting today's date.
         SimpleDateFormat formatter = new SimpleDateFormat("E MMM d", Locale.getDefault());
@@ -65,6 +62,15 @@ public class Home extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireContext(), AddLog.class);
+                startActivity(intent);
+            }
+        });
+
+        // going to add log activity if clicked on no data available layout.
+        binding.todaysDetailNotAvailableLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), AddLog.class);
                 startActivity(intent);
             }
         });
@@ -96,15 +102,22 @@ public class Home extends Fragment {
                             for(DataSnapshot snapshot1: snapshot.getChildren()){
                                 LogElement element = snapshot1.getValue(LogElement.class);
                                 Log.i(TAG, element.getDate());
-                                binding.dataAvailableGroup.setVisibility(View.VISIBLE);
-                                double minutesInDouble = Integer.parseInt(element.getMinutes())/60;
-                                double actualHour = (double)(Integer.parseInt(element.getHours())) + minutesInDouble;
-                                String hours = actualHour + " hrs";
-                                String calories = element.getCalories() + " kcal";
-                                String weight = element.getWeight() + " kg";
-                                binding.weightCountText.setText(weight);
-                                binding.durationCountText.setText(hours);
-                                binding.calorieCountText.setText(calories);
+                                if(Objects.equals(element.getDate(), presentDate)) {
+                                    binding.dataAvailableGroup.setVisibility(View.VISIBLE);
+                                    double minutesInDouble = Integer.parseInt(element.getMinutes()) / 60;
+                                    double actualHour = (double) (Integer.parseInt(element.getHours())) + minutesInDouble;
+                                    String hours = actualHour + " hrs";
+                                    String calories = element.getCalories() + " kcal";
+                                    String weight = element.getWeight() + " kg";
+                                    binding.weightCountText.setText(weight);
+                                    binding.durationCountText.setText(hours);
+                                    binding.calorieCountText.setText(calories);
+                                }
+                                // data is available but not from the same day.
+                                else {
+                                    Toast.makeText(getContext(), "Today's data is not available.", Toast.LENGTH_SHORT).show();
+                                    binding.dataNotAvailableGroup.setVisibility(View.VISIBLE);
+                                }
                             }
                         } else {
                             Toast.makeText(getContext(), "Today's data is not available.", Toast.LENGTH_SHORT).show();
@@ -117,7 +130,6 @@ public class Home extends Fragment {
 
                     }
                 });
-
 
     }
 
