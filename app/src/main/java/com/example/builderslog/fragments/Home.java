@@ -49,8 +49,6 @@ public class Home extends Fragment {
 
         getLogData();
 
-        //TODO to put some loading animation in place of today's activity.
-
         //getting today's date.
         SimpleDateFormat formatter = new SimpleDateFormat("E MMM d", Locale.getDefault());
         Calendar calendar = Calendar.getInstance();
@@ -103,6 +101,7 @@ public class Home extends Fragment {
                                 LogElement element = snapshot1.getValue(LogElement.class);
                                 Log.i(TAG, element.getDate());
                                 if(Objects.equals(element.getDate(), presentDate)) {
+                                    binding.animationLayout.setVisibility(View.GONE);
                                     binding.dataAvailableGroup.setVisibility(View.VISIBLE);
                                     double minutesInDouble = Integer.parseInt(element.getMinutes()) / 60;
                                     double actualHour = (double) (Integer.parseInt(element.getHours())) + minutesInDouble;
@@ -116,6 +115,7 @@ public class Home extends Fragment {
                                 // data is available but not from the same day.
                                 else {
                                     Toast.makeText(getContext(), "Today's data is not available.", Toast.LENGTH_SHORT).show();
+                                    binding.animationLayout.setVisibility(View.GONE);
                                     binding.dataNotAvailableGroup.setVisibility(View.VISIBLE);
                                 }
                             }

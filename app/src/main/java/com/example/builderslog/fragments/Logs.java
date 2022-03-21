@@ -80,6 +80,7 @@ private String presentDate;
                                 Log.i(TAG, element.getDate());
                                 // Setting today's data if today's date matches.
                                 if(Objects.equals(element.getDate(), presentDate)){
+                                    binding.animationLayout.setVisibility(View.GONE);
                                     binding.dataAvailableGroup.setVisibility(View.VISIBLE);
                                     double minutesInDouble = Integer.parseInt(element.getMinutes())/60;
                                     double actualHour = (double)(Integer.parseInt(element.getHours())) + minutesInDouble;
@@ -93,6 +94,7 @@ private String presentDate;
                                 // data is available but not from the same day.
                                 else {
                                     Toast.makeText(getContext(), "Today's data is not available.", Toast.LENGTH_SHORT).show();
+                                    binding.animationLayout.setVisibility(View.GONE);
                                     binding.dataNotAvailableGroup.setVisibility(View.VISIBLE);
                                 }
                             }
